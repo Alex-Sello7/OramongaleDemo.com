@@ -80,6 +80,10 @@
   }
   </script>
 
+  <!-- Preconnect to Google Fonts for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -149,7 +153,7 @@
     </div>
     <div class="reveal reveal-delay-2">
       <div class="overview-img-wrap">
-        <img src="assets/imgs/OraMongale_transparent_clean.png" alt="Oramongale Tradings logistics truck fleet" loading="lazy">
+        <img src="assets/imgs/OraMongale_transparent_clean.png" alt="Oramongale Tradings logistics truck fleet" loading="lazy" width="600" height="450">
         <div class="img-badge">Est. 2019 · Pretoria, Gauteng</div>
       </div>
     </div>
@@ -176,9 +180,9 @@
   </div>
   
   <div class="mission-img-grid reveal reveal-delay-3">
-    <img src="assets/imgs/heroIMG.jpg" alt="Mining operations" loading="lazy">
-    <img src="assets/imgs/img1.jpeg" alt="Logistics transport" loading="lazy">
-    <img src="assets/imgs/img6.jpg" alt="Heavy machinery" loading="lazy">
+    <img src="assets/imgs/heroIMG.jpg" alt="Mining operations" loading="lazy" width="600" height="400">
+    <img src="assets/imgs/img1.jpeg" alt="Logistics transport" loading="lazy" width="600" height="400">
+    <img src="assets/imgs/img6.jpg" alt="Heavy machinery" loading="lazy" width="600" height="400">
   </div>
 </section>
 
@@ -199,7 +203,7 @@
 </section>
 
 <section class="cta-section" aria-labelledby="cta-heading">
-  <img src="assets/imgs/img8.jpeg" alt="" class="cta-parallax-img" aria-hidden="true" loading="lazy">
+  <img src="assets/imgs/img8.jpeg" alt="" class="cta-parallax-img" aria-hidden="true" loading="lazy" width="1920" height="800">
   <div class="cta-overlay" aria-hidden="true"></div>
   <div class="cta-primary reveal">
     <h2 id="cta-heading" class="cta-h3">Need Reliable <span class="cta-amber">Logistics &amp; Mining</span> Support?</h2>
@@ -223,9 +227,9 @@
       <p>In addition, our fleet is supported by strict safety protocols and trained personnel who ensure that all transportation activities are conducted in accordance with health, safety, and environmental standards. This commitment allows us to provide dependable, secure, and cost-effective logistics solutions to our clients.</p>
     </div>
     <div class="fleet-gallery reveal reveal-delay-2">
-      <img src="assets/imgs/img5.jpg" alt="Heavy duty truck" loading="lazy">
-      <img src="assets/imgs/img4.webp" alt="Mining dump truck" loading="lazy">
-      <img src="assets/imgs/img3.webp" alt="Logistics fleet" loading="lazy">
+      <img src="assets/imgs/img5.jpg" alt="Heavy duty truck" loading="lazy" width="600" height="400">
+      <img src="assets/imgs/img4.webp" alt="Mining dump truck" loading="lazy" width="600" height="400">
+      <img src="assets/imgs/img3.webp" alt="Logistics fleet" loading="lazy" width="600" height="400">
     </div>
     <div class="fleet-tags reveal reveal-delay-2">
       <div class="fleet-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Regular Servicing</div>
@@ -362,18 +366,18 @@
         <div><div class="c-label">Address</div><div class="c-val">Pretoria<br>Gauteng<br>South Africa</div></div>
       </div>
       <div class="map-embed">
-        <iframe src="https://maps.google.com/maps?q=28265%20Sedikwe%20Street%2C%20Zone%202%2C%20Ga-Rankuwa%2C%200208&t=&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://maps.google.com/maps?q=28265%20Sedikwe%20Street%2C%20Zone%202%2C%20Ga-Rankuwa%2C%200208&t=&z=15&output=embed" allowfullscreen loading="lazy" title="Map showing Oramongale Tradings location in Ga-Rankuwa, Gauteng"></iframe>
       </div>
     </div>
     <div class="glass contact-form-wrap reveal reveal-delay-2">
       <div class="form-title">Request a Quote</div>
       <div class="form-fields">
         <div class="form-row">
-          <div class="field"><label class="field-label">Full Name <span>*</span></label><input type="text" class="field-input" id="fname" placeholder="Your full name"></div>
-          <div class="field"><label class="field-label">Email Address <span>*</span></label><input type="email" class="field-input" id="femail" placeholder="you@example.com"></div>
+          <div class="field"><label class="field-label" for="fname">Full Name <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label><input type="text" class="field-input" id="fname" name="fname" placeholder="Your full name" autocomplete="name" required aria-required="true"></div>
+          <div class="field"><label class="field-label" for="femail">Email Address <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label><input type="email" class="field-input" id="femail" name="femail" placeholder="you@example.com" autocomplete="email" required aria-required="true"></div>
         </div>
-        <div class="field"><label class="field-label">Phone Number</label><input type="tel" class="field-input" id="fphone" placeholder="+27 ..."></div>
-        <div class="field"><label class="field-label">Message <span>*</span></label><textarea class="field-textarea" id="fmsg" placeholder="Describe your logistics or transportation requirements..."></textarea></div>
+        <div class="field"><label class="field-label" for="fphone">Phone Number</label><input type="tel" class="field-input" id="fphone" name="fphone" placeholder="+27 ..." autocomplete="tel"></div>
+        <div class="field"><label class="field-label" for="fmsg">Message <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label><textarea class="field-textarea" id="fmsg" name="fmsg" placeholder="Describe your logistics or transportation requirements..." required aria-required="true"></textarea></div>
         <button class="btn-primary form-submit" id="formSubmit" type="button">Send Request</button>
         <div class="form-notice" id="formNotice" role="alert"></div>
       </div>

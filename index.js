@@ -55,11 +55,17 @@ if (servicesGrid) {
   // Build tab bar
   const tabBar = document.createElement('div');
   tabBar.className = 'svc-tab-bar';
+  tabBar.setAttribute('role', 'tablist');
+  tabBar.setAttribute('aria-label', 'Service categories');
   serviceCategories.forEach((cat, i) => {
     const btn = document.createElement('button');
     btn.className = 'svc-tab' + (i === 0 ? ' active' : '');
     btn.dataset.cat = cat.id;
-    btn.innerHTML = `<span class="svc-tab-icon">${cat.icon}</span><span class="svc-tab-label">${cat.label}</span>`;
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    btn.setAttribute('aria-controls', 'panel-' + cat.id);
+    btn.id = 'tab-' + cat.id;
+    btn.innerHTML = `<span class="svc-tab-icon" aria-hidden="true">${cat.icon}</span><span class="svc-tab-label">${cat.label}</span>`;
     btn.addEventListener('click', () => switchCategory(cat.id));
     tabBar.appendChild(btn);
   });
@@ -72,6 +78,10 @@ if (servicesGrid) {
     const panel = document.createElement('div');
     panel.className = 'svc-panel' + (ci === 0 ? ' active' : '');
     panel.dataset.panel = cat.id;
+    panel.id = 'panel-' + cat.id;
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', 'tab-' + cat.id);
+    if (ci !== 0) panel.setAttribute('hidden', '');
 
     // Category header
     const header = document.createElement('div');
@@ -106,8 +116,17 @@ if (servicesGrid) {
 }
 
 function switchCategory(id) {
-  document.querySelectorAll('.svc-tab').forEach(t => t.classList.toggle('active', t.dataset.cat === id));
-  document.querySelectorAll('.svc-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === id));
+  document.querySelectorAll('.svc-tab').forEach(t => {
+    const isActive = t.dataset.cat === id;
+    t.classList.toggle('active', isActive);
+    t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  });
+  document.querySelectorAll('.svc-panel').forEach(p => {
+    const isActive = p.dataset.panel === id;
+    p.classList.toggle('active', isActive);
+    if (isActive) p.removeAttribute('hidden');
+    else p.setAttribute('hidden', '');
+  });
 }
 
 // Loader
@@ -115,7 +134,7 @@ window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   setTimeout(() => {
     if(loader) loader.classList.add('hidden');
-  }, 1000);
+  }, 300);
 });
 
 // Navbar scroll + hamburger
@@ -166,15 +185,22 @@ navAnchors.forEach(anchor => {
 
 // Scroll reveal Intersection Observer
 const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add('revealed');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-reveals.forEach(el => revealObserver.observe(el));
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (prefersReducedMotion) {
+  // Immediately reveal all elements without animation
+  reveals.forEach(el => el.classList.add('revealed'));
+} else {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => revealObserver.observe(el));
+}
 
 // Hero loaded animation
 const hero = document.getElementById('hero');
@@ -238,7 +264,8 @@ if (backToTop) {
     else backToTop.classList.remove('visible');
   });
   backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
   });
 }
 
@@ -304,6 +331,7 @@ const buildDots = () => {
   cards.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 'testi-dot' + (i === currentSlide ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
     dot.addEventListener('click', () => goToSlide(i));
     dotsWrap.appendChild(dot);
   });
