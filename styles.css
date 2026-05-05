@@ -411,15 +411,6 @@
       transform: scale(1);
     }
     
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(rgba(232,160,32,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(232,160,32,0.035) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-    }
-    
     .hero-stripe {
       position: absolute;
       top: 0;
@@ -1007,14 +998,14 @@
     
     .services-banner {
       background: linear-gradient(90deg, rgba(232,160,32,0.1), rgba(232,160,32,0.02));
-      border: 1px solid rgba(232,160,32,0.2);
+      border: 1px solid rgba(232, 159, 32, 0.739);
       border-radius: 60px;
       padding: 1.2rem;
       text-align: center;
       font-family: 'Barlow Condensed', sans-serif;
       letter-spacing: 0.2em;
       font-size: 0.8rem;
-      color: var(--amber);
+      color: var(--navy);
     }
     
     /* ─── FLEET (WHITE BACKGROUND) ─── */
@@ -1108,36 +1099,47 @@
     /* ─── CTA SECTION ─── */
     .cta-section {
       padding: 80px 8%;
-      background: var(--dark-bg);
       position: relative;
       overflow: hidden;
+      background: var(--dark-bg);
     }
 
-    .cta-section::before {
-      content: '';
+    /* Parallax image — driven by JS */
+    .cta-parallax-img {
       position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 300px;
-      background: radial-gradient(ellipse at center, rgba(232,160,32,0.12) 0%, transparent 70%);
+      inset: -20% 0;
+      width: 100%;
+      height: 140%;
+      object-fit: cover;
+      object-position: center;
+      will-change: transform;
       pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Dark overlay replaces ::before */
+    .cta-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(13,21,48,0.82) 0%, rgba(13,21,48,0.65) 50%, rgba(13,21,48,0.88) 100%);
+      filter: brightness(0.9);
+      pointer-events: none;
+      z-index: 1;
     }
 
     .cta-section::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      right: 8%;
-      width: 240px;
-      height: 240px;
-      background: radial-gradient(circle, rgba(26,43,94,0.6) 0%, transparent 70%);
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(232,160,32,0.10) 0%, transparent 65%);
       pointer-events: none;
+      z-index: 2;
     }
     
     .cta-primary {
       position: relative;
+      z-index: 3;
       background: linear-gradient(140deg, rgba(26,43,94,0.7) 0%, rgba(15,26,61,0.9) 60%, rgba(232,160,32,0.08) 100%);
       border: 1px solid rgba(232,160,32,0.28);
       border-radius: 28px;
@@ -1171,7 +1173,7 @@
       pointer-events: none;
     }
 
-    .cta-primary h3 {
+    .cta-primary .cta-h3 {
       font-family: 'Bebas Neue', cursive;
       font-size: clamp(2.2rem, 4vw, 3.2rem);
       color: var(--white);
@@ -1182,7 +1184,8 @@
       z-index: 1;
     }
 
-    .cta-primary h3 span.cta-amber {
+    .cta-primary h2.cta-h3 span.cta-amber,
+    .cta-primary .cta-h3 span.cta-amber {
       color: var(--amber);
     }
     

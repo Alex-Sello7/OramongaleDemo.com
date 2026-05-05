@@ -355,3 +355,44 @@ const closeCookie = (choice) => {
 
 if (cookieAccept) cookieAccept.addEventListener('click', () => closeCookie('accepted'));
 if (cookieDecline) cookieDecline.addEventListener('click', () => closeCookie('declined'));
+// ─── CTA SECTION — PARALLAX IMAGE ───
+(function () {
+  const ctaImg = document.querySelector('.cta-parallax-img');
+  if (!ctaImg) return;
+
+  // Respect reduced-motion preference
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  let ticking = false;
+
+  const updateParallax = () => {
+    const section = ctaImg.closest('.cta-section');
+    if (!section) return;
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // Only run while section is anywhere near the viewport
+    if (rect.bottom < -vh || rect.top > vh * 2) {
+      ticking = false;
+      return;
+    }
+
+    // progress: 0 when section bottom hits viewport bottom → 1 when top hits viewport top
+    const progress = 1 - (rect.top + rect.height) / (vh + rect.height);
+    // Translate range: -8% (section below) → +8% (section above)
+    const shift = (progress - 0.5) * 16; // ±8% of img height
+    ctaImg.style.transform = `translateY(${shift}%)`;
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Run once on load
+  updateParallax();
+})();

@@ -5,6 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Oramongale Tradings (Pty) Ltd – Reliable Logistics, Transportation & Mining Support. Established 2019, Ga-Rankuwa, South Africa.">
   <title>Oramongale Tradings (Pty) Ltd</title>
+
+  <!-- ═══════════════════════════════════════════
+       FAVICONS
+  ════════════════════════════════════════════ -->
+  <link rel="icon" type="image/png" href="assets/favicons/favicon_blueBG.png">
+  <link rel="shortcut icon" type="image/png" href="assets/favicons/favicon_blueBG.png">
+  <link rel="apple-touch-icon" href="assets/favicons/favicon_blueBG.png">
+
+  <!-- ═══════════════════════════════════════════
+       OPEN GRAPH — Social sharing previews
+       (Facebook, WhatsApp, LinkedIn, Telegram…)
+       Replace YOUR_DOMAIN with your actual domain.
+       Replace the og:image path with a 1200×630px
+       banner image for the best preview card.
+  ════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="Oramongale Tradings (Pty) Ltd">
+  <meta property="og:title"       content="Oramongale Tradings (Pty) Ltd | Logistics & Mining Support">
+  <meta property="og:description" content="Reliable Logistics, Transportation & Mining Support across South Africa. Established 2019 — built on trust, safety, and operational excellence.">
+  <meta property="og:url"         content="https://YOUR_DOMAIN.co.za/">
+  <meta property="og:image"       content="https://YOUR_DOMAIN.co.za/assets/favicons/favicon_blueBG.png">
+  <meta property="og:image:alt"   content="Oramongale Tradings logo">
+  <meta property="og:locale"      content="en_ZA">
+
+  <!-- ═══════════════════════════════════════════
+       TWITTER / X CARD
+  ════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Oramongale Tradings (Pty) Ltd | Logistics & Mining Support">
+  <meta name="twitter:description" content="Reliable Logistics, Transportation & Mining Support across South Africa. Established 2019 — built on trust, safety, and operational excellence.">
+  <meta name="twitter:image"       content="https://YOUR_DOMAIN.co.za/assets/favicons/favicon/favicon.png">
+  <meta name="twitter:image:alt"   content="Oramongale Tradings logo">
+
+  <!-- ═══════════════════════════════════════════
+       JSON-LD STRUCTURED DATA
+       This is what tells Google to show your logo
+       image next to search results (Knowledge Panel
+       and branded searches). Replace YOUR_DOMAIN.
+  ════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Oramongale Tradings (Pty) Ltd",
+    "alternateName": "OraMongale Tradings",
+    "url": "https://YOUR_DOMAIN.co.za/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://YOUR_DOMAIN.co.za/assets/favicon/favicon.png",
+      "width": 512,
+      "height": 512
+    },
+    "description": "Reliable Logistics, Transportation & Mining Support across South Africa. Established 2019.",
+    "foundingDate": "2019",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ga-Rankuwa",
+      "addressRegion": "Gauteng",
+      "postalCode": "0208",
+      "addressCountry": "ZA"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+27-72-820-4661",
+      "contactType": "customer service",
+      "email": "Oramongaletradings@gmail.com",
+      "areaServed": "ZA"
+    },
+    "sameAs": [
+      "https://facebook.com",
+      "https://linkedin.com"
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -36,12 +111,12 @@
   </button>
 </nav>
 
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-stripe"></div>
+<section id="hero" aria-label="Hero — Oramongale Tradings">
+  <div class="hero-bg" role="img" aria-label="Industrial logistics background"></div>
+
+  <div class="hero-stripe" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-badge">South Africa's Industrial Logistics Partner</div>
+    <p class="hero-badge">South Africa's Industrial Logistics Partner</p>
     <h1 class="hero-h1">Ora<span class="amber-line">Mongale</span><br>Tradings</h1>
     <p class="hero-sub">Reliable Logistics, Transportation &amp; Mining Support — built on trust, safety, and operational excellence since 2019.</p>
     <div class="hero-actions">
@@ -50,18 +125,18 @@
     </div>
   </div>
 
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-num">2019</div><div class="stat-lbl">Established</div></div>
-    <div class="stat"><div class="stat-num">16+</div><div class="stat-lbl">Services</div></div>
-    <div class="stat"><div class="stat-num">ZA</div><div class="stat-lbl">Nationwide</div></div>
-  </div>
-  <div class="scroll-cue">Scroll</div>
+  <dl class="hero-stats" aria-label="Company highlights">
+    <div class="stat"><dt class="stat-lbl">Established</dt><dd class="stat-num">2019</dd></div>
+    <div class="stat"><dt class="stat-lbl">Services</dt><dd class="stat-num">16+</dd></div>
+    <div class="stat"><dt class="stat-lbl">Nationwide</dt><dd class="stat-num">ZA</dd></div>
+  </dl>
+  <p class="scroll-cue" aria-hidden="true">Scroll</p>
 </section>
 
-<section id="overview">
+<section id="overview" aria-labelledby="overview-heading">
   <div class="reveal">
     <div class="section-eyebrow">Who We Are</div>
-    <h2 class="section-heading">Company <span class="accent">Overview</span></h2>
+    <h2 id="overview-heading" class="section-heading">Company <span class="accent">Overview</span></h2>
     <span class="section-rule"></span>
   </div>
   <div class="overview-grid">
@@ -81,10 +156,10 @@
   </div>
 </section>
 
-<section id="mission">
+<section id="mission" aria-labelledby="mission-heading">
   <div class="reveal">
     <div class="section-eyebrow">Our Foundation</div>
-    <h2 class="section-heading">Mission &amp; <span class="accent">Vision</span></h2>
+    <h2 id="mission-heading" class="section-heading">Mission &amp; <span class="accent">Vision</span></h2>
     <span class="section-rule"></span>
   </div>
   <div class="mv-grid">
@@ -107,10 +182,10 @@
   </div>
 </section>
 
-<section id="services">
+<section id="services" aria-labelledby="services-heading">
   <div class="reveal">
     <div class="section-eyebrow">What We Do</div>
-    <h2 class="section-heading">Our <span class="accent">Services</span></h2>
+    <h2 id="services-heading" class="section-heading">Our <span class="accent">Services</span></h2>
     <span class="section-rule"></span>
     <p class="services-intro">Oramongale Tradings (Pty) Ltd provides a wide range of logistics, transportation, and mining support services tailored to meet diverse client needs across South Africa.</p>
   </div>
@@ -123,20 +198,22 @@
   </div>
 </section>
 
-<div class="cta-section">
+<section class="cta-section" aria-labelledby="cta-heading">
+  <img src="assets/imgs/img8.jpeg" alt="" class="cta-parallax-img" aria-hidden="true" loading="lazy">
+  <div class="cta-overlay" aria-hidden="true"></div>
   <div class="cta-primary reveal">
-    <h3>Need Reliable <span class="cta-amber">Logistics &amp; Mining</span> Support?</h3>
+    <h2 id="cta-heading" class="cta-h3">Need Reliable <span class="cta-amber">Logistics &amp; Mining</span> Support?</h2>
     <p>Get a free consultation and quote tailored to your business needs</p>
     <a href="#contact" class="btn-primary cta-btn">Request a Quote →</a>
   </div>
-</div>
+</section>
 
-<section id="fleet">
+<section id="fleet" aria-labelledby="fleet-heading">
   <div class="fleet-bg"></div>
   <div class="fleet-inner">
     <div class="reveal">
       <div class="section-eyebrow">Our Equipment</div>
-      <h2 class="section-heading">Mining &amp; Logistics <span class="accent">Fleet</span></h2>
+      <h2 id="fleet-heading" class="section-heading">Mining &amp; Logistics <span class="accent">Fleet</span></h2>
       <span class="section-rule"></span>
     </div>
     <div class="fleet-body reveal reveal-delay-1">
@@ -148,7 +225,7 @@
     <div class="fleet-gallery reveal reveal-delay-2">
       <img src="assets/imgs/img5.jpg" alt="Heavy duty truck" loading="lazy">
       <img src="assets/imgs/img4.webp" alt="Mining dump truck" loading="lazy">
-      <img src="assets/imgs/img8.jpeg" alt="Logistics fleet" loading="lazy">
+      <img src="assets/imgs/img3.webp" alt="Logistics fleet" loading="lazy">
     </div>
     <div class="fleet-tags reveal reveal-delay-2">
       <div class="fleet-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Regular Servicing</div>
@@ -161,10 +238,10 @@
   </div>
 </section>
 
-<section id="why-us">
+<section id="why-us" aria-labelledby="why-us-heading">
   <div class="reveal">
     <div class="section-eyebrow">Why Us</div>
-    <h2 class="section-heading">Why <span class="accent">Choose Us</span></h2>
+    <h2 id="why-us-heading" class="section-heading">Why <span class="accent">Choose Us</span></h2>
     <span class="section-rule"></span>
   </div>
   <div class="why-grid">
@@ -201,73 +278,73 @@
   </div>
 </section>
 
-<section id="testimonials">
+<section id="testimonials" aria-labelledby="testimonials-heading">
   <div class="reveal">
     <div class="section-eyebrow">What Clients Say</div>
-    <h2 class="section-heading">Client <span class="accent">Testimonials</span></h2>
+    <h2 id="testimonials-heading" class="section-heading">Client <span class="accent">Testimonials</span></h2>
     <span class="section-rule"></span>
   </div>
   <div class="testimonials-track-wrap">
     <div class="testimonials-track" id="testimonialsTrack">
-      <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-quote">"OraMongale Tradings handled our bulk material haulage on a tight deadline and delivered flawlessly. Professional, punctual, and priced fairly. They are now our go-to logistics partner."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">TM</div>
-          <div><div class="testi-name">Thabo Mokoena</div><div class="testi-role">Operations Manager &middot; Mining Co.</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-quote">"We have worked with many logistics companies across Gauteng. OraMongale stands out for their communication and reliability. Our heavy equipment arrived on site without a single issue."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">NP</div>
-          <div><div class="testi-name">Nomsa Pretorius</div><div class="testi-role">Project Director &middot; Construction Group</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-quote">"The team responded to our emergency logistics request within hours. That kind of responsiveness is rare in this industry. OraMongale truly goes beyond expectations every time."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">KD</div>
-          <div><div class="testi-name">Kagiso Dlamini</div><div class="testi-role">Supply Chain Lead &middot; Energy Sector</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-quote">"Cross-border logistics is complex, but OraMongale made it seamless. Their knowledge of customs processes and compliance saved us significant time and money on our first contract."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">SR</div>
-          <div><div class="testi-name">Sipho Radebe</div><div class="testi-role">CEO &middot; Industrial Exports Ltd</div></div>
-        </div>
-      </div>
+      <article class="testi-card">
+        <div class="testi-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="testi-quote">"OraMongale Tradings handled our bulk material haulage on a tight deadline and delivered flawlessly. Professional, punctual, and priced fairly. They are now our go-to logistics partner."</blockquote>
+        <footer class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">TM</div>
+          <div><cite class="testi-name">Thabo Mokoena</cite><div class="testi-role">Operations Manager &middot; Mining Co.</div></div>
+        </footer>
+      </article>
+      <article class="testi-card">
+        <div class="testi-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="testi-quote">"We have worked with many logistics companies across Gauteng. OraMongale stands out for their communication and reliability. Our heavy equipment arrived on site without a single issue."</blockquote>
+        <footer class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">NP</div>
+          <div><cite class="testi-name">Nomsa Pretorius</cite><div class="testi-role">Project Director &middot; Construction Group</div></div>
+        </footer>
+      </article>
+      <article class="testi-card">
+        <div class="testi-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="testi-quote">"The team responded to our emergency logistics request within hours. That kind of responsiveness is rare in this industry. OraMongale truly goes beyond expectations every time."</blockquote>
+        <footer class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">KD</div>
+          <div><cite class="testi-name">Kagiso Dlamini</cite><div class="testi-role">Supply Chain Lead &middot; Energy Sector</div></div>
+        </footer>
+      </article>
+      <article class="testi-card">
+        <div class="testi-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="testi-quote">"Cross-border logistics is complex, but OraMongale made it seamless. Their knowledge of customs processes and compliance saved us significant time and money on our first contract."</blockquote>
+        <footer class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">SR</div>
+          <div><cite class="testi-name">Sipho Radebe</cite><div class="testi-role">CEO &middot; Industrial Exports Ltd</div></div>
+        </footer>
+      </article>
     </div>
     <div class="testi-dots" id="testiDots"></div>
   </div>
 </section>
 
-<div class="partners-strip">
-  <div class="partners-label">Trusted Across Industries</div>
-  <div class="partners-logos">
-    <div class="partner-logo">Mining <span>&amp;</span> Resources</div>
-    <div class="partner-logo">Construction <span>&amp;</span> Civil</div>
-    <div class="partner-logo">Energy <span>&amp;</span> Power</div>
-    <div class="partner-logo">Agriculture <span>&amp;</span> Agri</div>
-    <div class="partner-logo">Government <span>&amp;</span> Public</div>
-    <div class="partner-logo">Manufacturing <span>&amp;</span> Industry</div>
-    <div class="partner-logo">Mining <span>&amp;</span> Resources</div>
-    <div class="partner-logo">Construction <span>&amp;</span> Civil</div>
-    <div class="partner-logo">Energy <span>&amp;</span> Power</div>
-    <div class="partner-logo">Agriculture <span>&amp;</span> Agri</div>
-    <div class="partner-logo">Government <span>&amp;</span> Public</div>
-    <div class="partner-logo">Manufacturing <span>&amp;</span> Industry</div>
-  </div>
-</div>
+<aside class="partners-strip" aria-label="Industries we serve">
+  <p class="partners-label">Trusted Across Industries</p>
+  <ul class="partners-logos" aria-label="Industry sectors">
+    <li class="partner-logo">Mining <span>&amp;</span> Resources</li>
+    <li class="partner-logo">Construction <span>&amp;</span> Civil</li>
+    <li class="partner-logo">Energy <span>&amp;</span> Power</li>
+    <li class="partner-logo">Agriculture <span>&amp;</span> Agri</li>
+    <li class="partner-logo">Government <span>&amp;</span> Public</li>
+    <li class="partner-logo">Manufacturing <span>&amp;</span> Industry</li>
+    <li class="partner-logo">Mining <span>&amp;</span> Resources</li>
+    <li class="partner-logo">Construction <span>&amp;</span> Civil</li>
+    <li class="partner-logo">Energy <span>&amp;</span> Power</li>
+    <li class="partner-logo">Agriculture <span>&amp;</span> Agri</li>
+    <li class="partner-logo">Government <span>&amp;</span> Public</li>
+    <li class="partner-logo">Manufacturing <span>&amp;</span> Industry</li>
+  </ul>
+</aside>
 
-<section id="contact">
+<section id="contact" aria-labelledby="contact-heading">
   <div class="reveal">
     <div class="section-eyebrow">Reach Out</div>
-    <h2 class="section-heading">Contact <span class="accent">Us</span></h2>
+    <h2 id="contact-heading" class="section-heading">Contact <span class="accent">Us</span></h2>
     <span class="section-rule"></span>
   </div>
   <div class="contact-grid">
